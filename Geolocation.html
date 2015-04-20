@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function showPosition(position) {
+    var xy = position.coords.latitude + "," + position.coords.longitude;
+
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    +xy+"&zoom=14&size=400x300&sensor=false";
+
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+</script>
+</head>
+
+<body>
+<button onclick="navigator.geolocation.getCurrentPosition(showPosition)">Click It to get your position</button>
+<div id="mapholder"></div>
+</body>
+</html>
+
